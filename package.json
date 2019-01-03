@@ -1,0 +1,26 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Mock Amazon application with SQL database.",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markieruiz/bamazon.git"
+  },
+  "keywords": [
+    "bamazon"
+  ],
+  "author": "Markie Ruiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/markieruiz/bamazon/issues"
+  },
+  "homepage": "https://github.com/markieruiz/bamazon#readme",
+  "dependencies": {
+    "inquirer": "^6.2.1",
+    "mysql": "^2.16.0"
+  }
+}
