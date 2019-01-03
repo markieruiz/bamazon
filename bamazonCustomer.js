@@ -59,7 +59,7 @@ function promptUserPurchase() {
 					connection.query(updateQueryStr, function (err, data) {
 						if (err) throw err;
 
-						console.log('Your oder has been placed! Your total is $' + productData.price * quantity);
+						console.log('Your order has been placed! Your total is $' + productData.price * quantity +'.');
 						console.log('Thank you for shopping with us!');
 						console.log("\n---------------------------------------------------------------------\n");
 
@@ -91,9 +91,10 @@ function displayInventory() {
 		var strOut = '';
 		for (var i = 0; i < data.length; i++) {
 			strOut = '';
-			strOut += 'Item ID: ' + data[i].item_id + '  //  ';
-			strOut += 'Product Name: ' + data[i].product_name + '  //  ';
-			strOut += 'Department: ' + data[i].department_name + '  //  ';
+			strOut += 'Item ID: ' + data[i].item_id + '  -  ';
+			strOut += '' + data[i].product_name + '  --  ';
+			// strOut += 'Product Name: ' + data[i].product_name + '  --  ';
+			// strOut += 'Department: ' + data[i].department_name + '  ---  ';
 			strOut += 'Price: $' + data[i].price + '\n';
 
 			console.log(strOut);
