@@ -1,12 +1,11 @@
 CREATE DATABASE bamazon;
-USE Bamazon;
-
+USE bamazon;
 
 CREATE TABLE products (
 	item_id INTEGER(11) AUTO_INCREMENT NOT NULL,
 	product_name VARCHAR(30) NOT NULL,
 	department_name VARCHAR(20) NOT NULL,
-	price DECIMAL(11,2) NOT NULL,
+	price DECIMAL(11,2) NOT NULL DEFAULT 0,
 	stock_quantity INTEGER(11) NOT NULL,
 	PRIMARY KEY (item_id)
 );
@@ -22,3 +21,19 @@ VALUES  ('Shampoo', 'Cosmetics', 5.75, 500),
 		('Banana', 'Produce', 0.44, 800),
 		('Tylenol', 'Pharmacy', 4.95, 100),
 		('Band Aid', 'Pharmacy', 3.25, 100);
+
+USE bamazon;
+ALTER TABLE products
+    ADD product_sales INTEGER NOT NULL DEFAULT 0;
+
+USE bamazon;
+CREATE TABLE departments (
+	department_id INTEGER AUTO_INCREMENT NOT NULL, 
+    department_name VARCHAR(100) NOT NULL, 
+    over_head_costs DECIMAL(11, 2) NOT NULL DEFAULT 0,
+    PRIMARY KEY (department_id)
+); 
+
+USE bamazon;
+INSERT INTO departments(department_name, over_head_costs)
+VALUES("Cosmetics", 500), ("Grocery", 500), ("Produce", 500), ("Pharmacy", 500);

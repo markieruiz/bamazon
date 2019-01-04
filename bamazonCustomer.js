@@ -56,14 +56,12 @@ function promptUserPurchase() {
 					console.log('Congratulations, the product you requested is in stock! Placing order!');
 
 					var updateQueryStr = 'UPDATE products SET stock_quantity = ' + (productData.stock_quantity - quantity)
-					+ ', product_sales = ' + (productData.price * quantity)
-					+ ' WHERE item_id = ' + item;
-					// ', product_sales =' + (productData.price * quantity) + 
-					// 'WHERE item_id =' + item;
+						+ ', product_sales = ' + (productData.price * quantity)
+						+ ' WHERE item_id = ' + item;
 					connection.query(updateQueryStr, function (err, data) {
 						if (err) throw err;
 
-						console.log('Your order has been placed! Your total is $' + productData.price * quantity +'.');
+						console.log('Your order has been placed! Your total is $' + productData.price * quantity + '.');
 						console.log('Thank you for shopping with us!');
 						console.log("\n---------------------------------------------------------------------\n");
 
