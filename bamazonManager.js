@@ -142,7 +142,7 @@ function addInventory() {
       filter: Number
     }
   ]).then(function (input) {
-    
+
     var item = input.item_id;
     var addQuantity = input.quantity;
 
@@ -176,7 +176,7 @@ function addInventory() {
 }
 
 function createNewProduct() {
-  
+
   inquirer.prompt([
     {
       type: 'input',
@@ -201,7 +201,7 @@ function createNewProduct() {
       validate: validateInteger
     }
   ]).then(function (input) {
- 
+
     console.log('Adding New Item: \n    product_name = ' + input.product_name + '\n' +
       '    department_name = ' + input.department_name + '\n' +
       '    price = ' + input.price + '\n' +
@@ -221,7 +221,7 @@ function createNewProduct() {
 }
 
 function runBamazon() {
- 
+
   promptManagerAction();
 }
 
